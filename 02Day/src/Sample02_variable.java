@@ -32,6 +32,9 @@ public class Sample02_variable {
 		System.out.println(height);
 		System.out.println(weight);
 
+		
+		
+
 	}
 
 }
