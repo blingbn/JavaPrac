@@ -20,7 +20,7 @@ public class IfTest3 {
 		*/
 		
 		
-		
+		/*
 		//연습1 if else 사용 F,C,B,A 순으로 비교
 		Scanner scan = new Scanner(System.in);
 		
@@ -37,6 +37,24 @@ public class IfTest3 {
 			System.out.println("A");
 		}
 		scan.close();
+	
+		*/
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

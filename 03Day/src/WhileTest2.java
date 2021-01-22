@@ -14,7 +14,7 @@ public class WhileTest2 {
 		*/
 		
 		
-		/*
+		
 		//10~0까지의 합계
 		
 		int num = 10;
@@ -25,7 +25,9 @@ public class WhileTest2 {
 		}
 		System.out.println(sum);
 		
-		*/
+		
+		
+		
 		/*
 		//10~0까지 중 짝수의 합계
 		
@@ -100,7 +102,7 @@ public class WhileTest2 {
 		System.out.println(sum);
 		*/
 		
-		
+		/*
 		int n3 = 1;
 		int sum = 0;
 		int sum2 = 0;
@@ -113,7 +115,7 @@ public class WhileTest2 {
 		}while(n3<101);
 		System.out.println(n3);
 		
-		
+		*/
 	}
 
 }
