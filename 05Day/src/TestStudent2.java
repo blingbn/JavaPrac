@@ -21,6 +21,7 @@ public class TestStudent2 {
 		System.out.println(stu1+"\t"+stu2);
 		System.out.println(stu1.name+"\t"+stu2.name);
 		System.out.println(stu1.age+"\t"+stu2.age);
+		System.out.println(stu1.address+"\t"+stu2.address);
 		
 		
 		
