@@ -1,0 +1,19 @@
+package com.bank;
+
+public class Bank_Single {
+	
+	private static Bank_Single b = new Bank_Single(); //2. static 변수로 자신의 클래스를 객체생성
+	private String name;
+	
+	
+	private Bank_Single() {} //1. 생성자를 public -> private으로
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}
