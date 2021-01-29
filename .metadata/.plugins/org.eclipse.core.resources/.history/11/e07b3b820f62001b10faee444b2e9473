@@ -1,0 +1,14 @@
+package com.test3;
+
+public class Test {
+
+	public static void main(String[] args) {
+		Manager m = new Manager("홍길동", 100, "영업부");
+		
+		System.out.println(m.getEmployee());
+		
+		
+		
+	}
+
+}

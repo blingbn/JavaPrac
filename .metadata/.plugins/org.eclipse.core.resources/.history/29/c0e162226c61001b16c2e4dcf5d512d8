@@ -1,0 +1,24 @@
+package prac;
+
+import java.util.Arrays;
+
+public class CopyArray {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		int[] arr = new int[5]; // 길이 5인 arr 배열 선언 + 생성
+		int[] tmp = new int[arr.length*2]; //새로운 배열인 tmp에 arr배열의 2배길이 대입
+		
+		for (int i = 0; i < arr.length; i++) {
+			tmp[i]=arr[i];
+			arr = tmp;
+			System.out.println(Arrays.toString(tmp));
+		}
+		
+
+	}
+
+}

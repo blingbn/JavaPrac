@@ -1,0 +1,26 @@
+package com.test3;
+public class Ex06_6 {
+	String name;
+	int salary;
+	@Override
+	public String getEmployee() {
+		return name + " " + salary;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

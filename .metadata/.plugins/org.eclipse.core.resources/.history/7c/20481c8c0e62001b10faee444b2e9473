@@ -1,0 +1,39 @@
+package com.test3;
+class Employee {
+	String name;
+	int salary;
+
+	
+	public String getEmployee() {
+		return name + " " + salary;
+	}
+	
+	public Employee(String name, int salary) {
+		super();
+		this.name = name;
+		this.salary = salary;
+	}
+	public Employee() {	}
+	
+}
+//end class
+	class Manager extends Employee{
+		String depart;
+	}
+	
+	
+	public class Ex06_6{}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

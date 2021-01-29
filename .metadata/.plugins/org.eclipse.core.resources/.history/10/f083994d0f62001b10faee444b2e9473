@@ -1,0 +1,52 @@
+package com.test3;
+class Employee {
+	String name;
+	int salary;
+
+	
+	public String getEmployee() {
+		System.out.println("EmployeegetEmployee() ===================");
+		return name + " " + salary;
+	}
+	
+	public Employee(String name, int salary) {
+		super();
+		this.name = name;
+		this.salary = salary;
+	}
+	public Employee() {	}
+	
+}
+//end class
+	class Manager extends Employee{
+		String depart;
+		
+		@Override
+		public String getEmployee() {
+			// 
+			return super.getEmployee()+" "+depart; //부모의 getEmployee가출력됐으니 depart추가
+		}
+
+		public Manager(String name, int salary, String depart) {
+			super(name, salary);
+			this.depart = depart;
+		}
+		
+	}
+	
+	
+	public class Ex06_6{}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

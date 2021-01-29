@@ -1,0 +1,57 @@
+package prac;
+
+
+
+public class Array {
+
+	public static void main(String[] args) {
+		/*
+		 int sum=0;
+		 
+		float average = 0f;
+		
+		int[] score = {100,88,100,100,90};
+		for(int i=0; i<score.length; i++) {
+			sum+=score[i];
+		}
+		average = sum/(float)score.length;
+		System.out.println("총점 : " + sum);
+		System.out.println("평균 : " + average);
+		*/
+		
+		/*
+		int sum=0;
+		float avg=0;
+		int[] score = {100,88,100,100,90};
+		for(int i=0; i<score.length; i++) {
+			sum += score[i];
+		}
+		avg = sum / (float)score.length;
+		System.out.println("총점 : " + sum);
+		System.out.println("평균 : " + avg);
+		*/
+		
+		
+		
+		//최댓값과 최솟값
+		
+		int[] score = {79,88,91,33,100,55,95};
+		int max = score[0];
+		int min = score[0];
+		
+		for(int i=1; i<score.length; i++) {
+			if(max<score[i]) {
+				max = score[i];
+			}else if(min>score[i]) {
+				min = score[i];
+			}
+		}System.out.println("최대값은 "+ max + " 최소값은 " + min + "입니다.");
+		
+		
+		
+		
+	
+	
+	}
+
+}

@@ -1,0 +1,82 @@
+package com.test3;
+class Employee {
+	String name;
+	int salary;
+
+	
+	public String getEmployee() {
+		System.out.println("EmployeegetEmployee() ===================");
+		return name + " " + salary;
+	}
+	
+	public Employee(String name, int salary) {
+		super();
+		this.name = name;
+		this.salary = salary;
+	}
+	public Employee() {	}
+	
+}
+//end class
+
+class Engineer extends Employee{
+	
+	int bonus;
+	
+	public Engineer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Engineer(String name, int salary) {
+		super(name, salary);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Engineer(String name, int salary, int bonus) {
+		super(name, salary);
+		this.bonus = bonus;
+	}
+	
+	public String getEmployee() { //오버라이딩
+		
+		return name + " " + salary + " " + bonus;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+	class Manager extends Employee{
+		String depart;
+		
+		@Override //아나케이션 재정의 한거다 라고 표시한것
+		public String getEmployee() {
+			System.out.println("Manager getEmployee() ================================="); 
+			return super.getEmployee()+" "+depart; //부모의 getEmployee가출력됐으니 depart추가
+		}
+
+		public Manager(String name, int salary, String depart) {
+			super(name, salary);
+			this.depart = depart;
+		}
+		
+	}
+	
+	
+	public class Ex06_6{}
+	
+	
+	
+	
+	
+	
+

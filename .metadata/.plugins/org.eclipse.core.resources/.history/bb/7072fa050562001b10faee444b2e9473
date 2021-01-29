@@ -1,0 +1,21 @@
+
+public class TestPet {
+
+	public static void main(String[] args) {
+		
+		
+		//고양이2마리, 강아지 1마리, 물고기1마리
+		Cat c = new Cat("야옹이", 3, "암놈");
+		Cat c2 = new Cat("하늘이", 1, "숫놈");
+		Dog d = new Dog("누렁이", 8,"암놈", "검정");
+		Fish f = new Fish("골드", 1, 163.3);
+		
+		
+		
+		
+		c.eatCat();
+		c.cryCat();
+		c.sleepCat();
+	}
+
+}

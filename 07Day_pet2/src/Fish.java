@@ -1,0 +1,26 @@
+
+public class Fish extends Pet {
+	private double tallSize;
+
+	// 동작
+		public void swimFish() {
+			System.out.println("어푸어푸~");
+		}
+	
+	public Fish(String name, int age, double tallSize) {
+		super(name, age);
+		//this.name = name;
+		//this.age = age;
+		this.tallSize = tallSize;
+	}
+
+	public double getTallSize() {
+		return tallSize;
+	}
+
+	public void setTallSize(double tallSize) {
+		this.tallSize = tallSize;
+	}
+
+	
+}

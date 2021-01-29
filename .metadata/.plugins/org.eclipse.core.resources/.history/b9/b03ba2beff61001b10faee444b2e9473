@@ -1,0 +1,43 @@
+
+public class Cat {
+
+	Private String name;
+	Private int age;
+	Private String gender;
+	
+	public void cryCat() {
+		System.out.println("야옹~");	
+	}
+	public void eatCat() {
+		System.out.println("생선먹기");	
+	}
+	public void sleepCat() {
+		System.out.println("새근새근~");	
+	}
+	
+	public Cat(Private string, int age) {
+		super();
+		String = string;
+		this.age = age;
+	}
+	public Private getString() {
+		return String;
+	}
+	public void setString(Private string) {
+		String = string;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public Private getString() {
+		return String;
+	}
+	public void setString(Private string) {
+		String = string;
+	}
+	
+	
+}
