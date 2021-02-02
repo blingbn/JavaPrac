@@ -1,0 +1,42 @@
+package com.test;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class Ex08_11 {
+
+	public static void main(String[] args) {
+		//현재날짜
+		Calendar  cal = Calendar.getInstance();
+		int year = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH)+1;// 0~11월까지 구해지므로 +1 해야함
+		int day = cal.get(Calendar.DAY_OF_MONTH);
+		System.out.println(year + "년" + month + "월" + day + "일");
+		
+		
+		//시,분,초 구하기
+		int hour = cal.get(Calendar.HOUR_OF_DAY); //0~23
+		int minute = cal.get(Calendar.MINUTE); 
+		int second = cal.get(Calendar.SECOND);
+		System.out.println(hour + "시" + minute + "분" + second + "초");
+		
+		//특정 날짜 설정하기
+		Calendar cal2 = Calendar.getInstance();
+		//month의 경우 0부터 시작하므로 +1
+		cal2.set(2014, 11, 24);
+		Date now = cal2.getTime();
+		System.out.println(now);
+		
+		//날짜변경
+		System.out.println("=1일 후 =");
+		cal2.add(Calendar.DATE,1);
+		System.out.println(cal2.getTime());
+		System.out.println("=6달 후=");
+		cal2.add(Calendar.MONTH, -6);
+		System.out.println(cal2.getTime());
+		
+		
+		
+	}
+
+}

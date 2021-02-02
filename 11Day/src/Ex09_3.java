@@ -1,0 +1,21 @@
+
+public class Ex09_3 {
+
+	public static void main(String[] args) {
+		System.out.println("시작");
+		String name = null;
+	try {
+		int num = 3 / 0;
+		System.out.println("문자열의 길이 :" + name.length());
+	}catch(NullPointerException e) { // 딱 맞는 타입의 exception캐치문을 잡아야함.
+		//e.printStackTrace();
+		System.out.println(e.getMessage());
+	}catch(ArithmeticException e) { // 딱 맞는 타입의 exception캐치문을 잡아야함.
+		System.out.println(e.getMessage());
+	}catch(Exception e) { // e3.get
+		System.out.println(e.getMessage());
+		System.out.println("모든 예외 처리 가능");
+	}	
+	System.out.println("프로그램 정상 종료");	
+	}
+}
