@@ -16,5 +16,4 @@ public class DBMain {
 		service.setDAO(new MySQLDAO());
 		service.insert();
 	}
-
 }
