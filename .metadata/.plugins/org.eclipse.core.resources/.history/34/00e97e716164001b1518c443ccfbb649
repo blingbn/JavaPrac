@@ -1,0 +1,10 @@
+package com.dao;
+public class MySQLDAO {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

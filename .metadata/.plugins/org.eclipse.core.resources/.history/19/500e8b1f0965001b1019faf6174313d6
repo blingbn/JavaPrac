@@ -1,0 +1,16 @@
+package com.test;
+
+import java.util.Calendar;
+
+public class Ex08_11 {
+
+	public static void main(String[] args) {
+		//현재날짜
+		Calendar  cal = Calendar.getInstance();
+		int year = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH);
+		
+
+	}
+
+}

@@ -1,0 +1,75 @@
+
+class Employee {
+
+	String name;
+	int salary;
+
+	public String getEmployee() {
+		return name+" "+salary;
+	}
+	public Employee() {	}
+	public Employee(String name, int salary) {
+		super();
+		this.name = name;
+		this.salary = salary;
+	}
+}//ends Employee
+
+class Manager extends Employee{
+	String depart; //유일한변수
+	
+	public String getDepart() { //자식
+		return depart;
+	}
+	public void setDepart(String depart) { //자식
+		this.depart = depart;
+	}
+	public void print() {} //자식
+	
+	@Override
+	public String getEmployee() {
+		return super.getEmployee()+" " + depart;
+	
+	}
+	public Manager(String name, int salary, String depart) {
+		super(name,salary);
+		this.depart = depart;
+	}
+}//ends Manager
+
+public class Ex06_8_arr{
+	public static void main(String[] args) {
+//		Employee e = new Employee("홍길동", 100);
+//		
+//		System.out.println(e.getEmployee()); //Employee에서 
+//		
+//		Manager m1 = new Manager("AAA", 200," 서울");
+//		System.out.println(m1.getEmployee()); //Employee에서 오버라이딩된 Manager걸 불러옴
+//		
+//		//다형성-부모타입변수로 자식객체 저장가능
+//		Employee m2 = new Manager("bb", 300, "서울"); // 자식을 부모 변수에 담음.
+//		System.out.println(m2.getEmployee()); //오버라이딩 된 자식함수 호출
+//		//System.out.println(m2.print); //실제 객체만 Manager이고 타입 Employee이기 때문에 접근 가능 Employee만 가능함
+//		
+//		//전체를 다 사용하려면 형변환을 해야함 (타입 캐스팅) 부모 -> 자식타입 변환 후 접근해야함
+//		
+//		Manager m3 = (Manager)m2; // m2(employee타입)에 저장된애를 Manager로 형변환해서 m3에 Manager로 변경
+//		
+//		System.out.println(m3.getEmployee()); //Employee이 타입에 overriding된 manager객체를 
+		
+		
+		Employee a = new Manager("aa", 1, "제주"); //다형성
+		System.out.println(a.getEmployee()); // Employee에서 오버라이딩 된 Manager 객체 호출
+		
+		//String loc = a.getDepart(); //컴파일 에러 : 타입이 부모이기때문에 자식에 유일하게 있는건 불러올 수 없음.
+		
+		//형변환
+		Manager a1 = (Manager)a;
+		String name = a1.getDepart(); // 자식의 유일 객체 접근 가능
+		System.out.println(name);
+		
+		
+		
+		
+	}
+}

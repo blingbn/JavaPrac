@@ -1,0 +1,30 @@
+package com.test;
+
+interface Ex07_3{
+	public abstract void speed();
+	public default void start() {
+		System.out.println("start~");
+	}
+	public static void stop() {
+		System.out.println("stop~");
+	}}
+
+class Car implements Ex07_3{
+
+	@Override
+	public void speed() {
+		System.out.println("100km");
+		
+	}
+	
+}
+
+
+public class Ex07_3 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

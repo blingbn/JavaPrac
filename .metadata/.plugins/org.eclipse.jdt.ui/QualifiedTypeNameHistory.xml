@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="com.test3.Manager"/>
+    <fullyQualifiedTypeName name="mobile.Mobile"/>
+    <fullyQualifiedTypeName name="com.dao.MySQLDAO"/>
+    <fullyQualifiedTypeName name="com.service.DBService"/>
+    <fullyQualifiedTypeName name="com.dao.OracleDAO"/>
+    <fullyQualifiedTypeName name="com.test.Outer.Inner"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.text.NumberFormat"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

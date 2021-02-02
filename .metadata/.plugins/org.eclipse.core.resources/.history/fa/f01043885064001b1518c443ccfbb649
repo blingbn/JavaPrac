@@ -1,0 +1,41 @@
+package mobile;
+public abstract class Mobile{ //abstract선언 , abstract 함수가 있으므로
+	private String name;
+	private int batterySize;
+	private String osType;
+	
+	
+	public abstract int operate(int time); // {} 없음, abstract선언
+	public abstract int charge(int time);
+	public Mobile() {
+		super();
+	}
+	public Mobile(String name, int batterySize, String osType) {
+		super();
+		this.name = name;
+		this.batterySize = batterySize;
+		this.osType = osType;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getBatterySize() {
+		return batterySize;
+	}
+	public void setBatterySize(int batterySize) {
+		this.batterySize = batterySize;
+	}
+	public String getOsType() {
+		return osType;
+	}
+	public void setOsType(String osType) {
+		this.osType = osType;
+	}
+	
+}
+
+	

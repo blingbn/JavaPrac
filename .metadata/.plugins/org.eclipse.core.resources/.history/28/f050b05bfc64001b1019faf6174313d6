@@ -1,0 +1,17 @@
+package com.test;
+
+public class TimeTest {
+
+	public static void main(String[] args) {
+		
+		
+		Test t = new Test();
+		t.aaa();
+		t.bbb();
+		t.ccc();
+		
+		
+
+	}
+
+}

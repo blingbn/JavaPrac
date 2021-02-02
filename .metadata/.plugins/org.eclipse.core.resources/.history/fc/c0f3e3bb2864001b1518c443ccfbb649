@@ -1,0 +1,62 @@
+
+class Employee {
+
+	String name;
+	int salary;
+
+	public String getEmployee() {
+		return name+" "+salary;
+	}
+	public Employee() {	}
+	public Employee(String name, int salary) {
+		super();
+		this.name = name;
+		this.salary = salary;
+	}
+}//ends Employee
+
+class Manager extends Employee{
+	String depart; //유일한변수
+	
+	public String getDepart() { //자식
+		return depart;
+	}
+	public void setDepart(String depart) { //자식
+		this.depart = depart;
+	}
+	public void print() {} //자식
+	
+	@Override
+	public String getEmployee() {
+		return super.getEmployee()+" " + depart;
+	
+	}
+	public Manager(String name, int salary, String depart) {
+		super(name,salary);
+		this.depart = depart;
+	}
+}//ends Manager
+
+public class Ex06_7{
+	public static void main(String[] args) {
+//		Employee e = new Employee("홍길동", 100);
+//		
+//		System.out.println(e.getEmployee()); //Employee에서 
+//		
+//		Manager m1 = new Manager("AAA", 200," 서울");
+//		System.out.println(m1.getEmployee()); //Employee에서 오버라이딩된 Manager걸 불러옴
+//		
+		//다형성-부모타입변수로 자식객체 저장가능
+		Employee m2 = new Manager("bb", 300, "서울"); // 자식을 부모 변수에 담음.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

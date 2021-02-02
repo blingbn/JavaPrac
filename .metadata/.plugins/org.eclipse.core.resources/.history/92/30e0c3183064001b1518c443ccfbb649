@@ -1,0 +1,40 @@
+package com.test;
+
+
+class Employee{
+	//세금구하기
+	public void taxRate(Employee e) {
+		if(e instanceof Manager) {
+			Manager m = (Manager)e;
+			System.out.println("Manager 세금 구하기");
+		}else if (e instanceof Engineer) {
+			Engineer en = (Engineer)e;
+			System.out.println("Engineer 세금 구하기");
+		}else if (e instanceof Employee) {
+			Employee en = (Employee)e;
+			System.out.println("Employee 세금 구하기");
+		}
+	}
+}
+
+class Manager extends Employee{
+	public void print() {} //유일함수
+}
+class Engineer extends Employee{
+	public void test() {} // 유일함수
+}
+
+public class Ex06_8 {
+
+	public static void main(String[] args) {
+		Employee emp = new Employee();
+		Manager man = new Manager();
+		Engineer eng = new Engineer();
+		
+		emp.taxRate(emp);
+//		man.taxRate(man);
+//		man.taxRate(eng);
+
+	}
+
+}

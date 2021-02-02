@@ -1,0 +1,38 @@
+
+public class Dog extends Pet {
+	private String gender;
+	private String color;
+
+	
+	public Dog(String name, int age, String gender, String color) {
+		super(name,age);
+		this.gender = gender;
+		this.color = color;
+	}
+	@Override
+	public void cry() {
+		System.out.println("멍멍~");
+	}
+	@Override
+	public void eat() {
+		System.out.println("쩝쩝~");
+	}
+	@Override
+	public void sleep() {
+		System.out.println("쿨쿨~");
+	}
+	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+}

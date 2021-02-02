@@ -1,0 +1,32 @@
+package com.test2;
+public class CastingTest2 {
+
+	public static void main(String[] args) {
+		Car car = new Car();
+		Car car2 = null;
+		FireEngine fe = null;
+		
+		car.drive();
+		
+
+	}
+
+}
+class Car{
+	String color;
+	int door;
+	
+	void drive() {
+		System.out.println("Drive, Brrrr~");
+	}
+	
+	void stop() {
+		System.out.println("Stop!!!");
+	}
+}
+
+class FireEngine extends Car{
+	void water() {
+		System.out.println("Water!!!");
+	}
+}

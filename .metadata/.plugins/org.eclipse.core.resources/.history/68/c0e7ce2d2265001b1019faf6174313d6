@@ -1,0 +1,12 @@
+
+public class ExceptionTest_0 {
+
+	public static void main(String[] args) {
+		int value = 3;
+		int num = 3 / value;
+		int result = num + 100;
+		System.out.println("연산된 값"+result);
+		System.out.println("정상종료 ==============");
+	}
+
+}

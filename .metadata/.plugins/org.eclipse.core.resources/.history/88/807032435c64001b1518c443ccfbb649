@@ -1,0 +1,33 @@
+
+public class Cat extends Pet {
+	
+	private String gender;
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return super.getName();
+	}
+	@Override
+	public void setName(String name) {
+		// TODO Auto-generated method stub
+		super.setName(name);
+	}
+	@Override
+	public void eat() {
+		System.out.println("생선먹기");
+	}
+	@Override
+	public void sleep() {
+		System.out.println("새근새근!");
+	}
+
+	
+
+
+}

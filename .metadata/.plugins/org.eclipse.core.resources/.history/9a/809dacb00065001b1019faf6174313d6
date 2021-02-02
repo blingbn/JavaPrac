@@ -1,0 +1,16 @@
+package com.test;
+
+public class WrapperTest {
+
+	public static void main(String[] args) {
+		
+		int num = 10;//기본형
+		Integer objnum = new Integer(10);//WrapperClass
+		
+		System.out.println(objnum.MAX_VALUE);
+		int pdtnum = objnum.intValue();
+		System.out.println(pdtnum);
+	
+	}
+
+}

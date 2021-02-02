@@ -1,0 +1,8 @@
+package com.dao;
+
+public class DBDAO {
+	
+	
+	public abstract void connect();
+	public abstract void insert();
+}

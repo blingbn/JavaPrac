@@ -1,0 +1,23 @@
+
+public class Manager extends Employee{
+	
+	//String name;
+	//int salary;
+	String depart;
+	
+	
+
+	@Override
+	public String getEmployee() {
+		// TODO Auto-generated method stub
+		return super.getEmployee()+ " " + depart;
+	}
+
+	public Manager(String depart) {
+		super();
+		this.depart = depart;
+	}
+	
+	
+	
+}
