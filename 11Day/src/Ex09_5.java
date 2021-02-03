@@ -14,7 +14,7 @@ public class Ex09_5 {
 		try {
 			a();
 		}catch(ArithmeticException e) {
-			System.out.println(e.getMessage());
+			System.out.println("main========" + e.getMessage());
 		}System.out.println("프로그램 정상 종료");
 	}
 }
