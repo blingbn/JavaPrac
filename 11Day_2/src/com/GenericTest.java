@@ -18,14 +18,14 @@ public class GenericTest {
 	public static void main(String[] args) {
 		Box b = new Box();
 		b.setValue("hello");
-		String x = (String)b.getValue();
+		String x = (String)b.getValue(); //Obj -> Sring 형변환 후 사용
 		
 		Box b2 = new Box();
 		b2.setValue(new Date());
-		Date d=(Date)b2.getValue();
+		Date d=(Date)b2.getValue(); //obj -> Date로 형변환
 		
 		Box b3 = new Box();
-		b3.setValue(100);
+		b3.setValue(100); //오토박싱 Integer
 		b3.setValue(100);
 		b3.setValue(100);
 		b3.setValue("aaa");
