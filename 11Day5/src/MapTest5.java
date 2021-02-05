@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Set;
 
 public class MapTest5 {
@@ -34,6 +35,16 @@ public class MapTest5 {
 			System.out.println(p.getName());
 		}
 		*/
+		
+		//Iterator 이용
+		Set<String> keys2 =map.keySet();
+		Iterator<String> it = keys2.iterator();
+		while (it.hasNext()) {
+			String key = (String) it.next(); // 키를 하나 꺼내온것
+			Person p1 = map.get(key);
+			System.out.println(key + p1.getName());
+		}
+		
 		
 
 	}
