@@ -1,0 +1,10 @@
+import java.util.ArrayList;
+
+public class MakeList {
+	
+	
+	ArrayList<Integer> list = new ArrayList<Integer>();
+	list.add(1);
+	
+	
+}

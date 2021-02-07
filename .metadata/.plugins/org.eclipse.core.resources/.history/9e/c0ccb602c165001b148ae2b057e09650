@@ -1,0 +1,23 @@
+
+class Ex09_8 extends Exception{
+	public Ex09_8(String mesg) {
+		super(mesg);
+	}
+}
+
+public class Ex09_8 {
+	public static void check(int num) throws Ex09_8{
+		if(num<100){
+			throw new Ex09_8("num값이 100보다 작다");
+		}
+	}
+	public static void main(String[] args)  {
+		System.out.println("프로그램 시작");
+		try {
+			check(70);
+		}catch(Ex09_8 e){
+			System.out.println("예외발생 : " + e.getMessage());
+		}System.out.println("프로그램 정상 종료");
+	}
+
+}

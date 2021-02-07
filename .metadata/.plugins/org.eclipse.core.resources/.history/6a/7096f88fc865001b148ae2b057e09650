@@ -1,0 +1,14 @@
+
+public class Calculator {
+	int a;
+	int b;
+	char operator;
+	
+	void plus(int a, int b) {
+		return a + b;
+	}
+	
+	
+	
+	
+}

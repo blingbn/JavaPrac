@@ -1,0 +1,50 @@
+
+public class Company {
+	double salary;
+	double income;
+	double afterTaxIncome;
+	double bonus;
+	double afterTaxBonus;
+	
+	
+	public Company() {	}
+
+
+	public Company(double salary, double income, double afterTaxIncome, double bonus, double afterTaxBonus) {
+		super();
+		this.salary = salary;
+		this.income = income;
+		this.afterTaxIncome = afterTaxIncome;
+		this.bonus = bonus;
+		this.afterTaxBonus = afterTaxBonus;
+	}
+
+	public double getIncome() {
+		return income;
+	}
+	public void setIncome(double income) {
+		this.income = income;
+	}
+	public double getAfterTaxIncome() {
+		afterTaxIncome = income-(income*0.1);
+		return afterTaxIncome;
+	}
+	public void setAfterTaxIncome(double afterTaxIncome) {
+		this.afterTaxIncome = afterTaxIncome;
+	}
+	public double getBonus() {
+		bonus = income*3*0.2;
+		return bonus;
+	}
+	
+	public double getAfterTaxBonus() {
+		afterTaxBonus = bonus-(bonus*0.5);
+		return afterTaxBonus;
+	}
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,20 @@
+import java.util.HashMap;
+
+public class MapTest5 {
+
+	public static void main(String[] args) {
+		
+		HashMap<String, Person> map = new HashMap<>(); //다형성
+		map.put("one", new Person);
+		map.put("two", "이순신");
+		map.put("three", "유관순");
+		//map.put("aa", 100);String generic으로 integer불가능
+		
+
+		
+		
+		
+
+	}
+
+}

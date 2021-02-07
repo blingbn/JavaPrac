@@ -1,0 +1,27 @@
+import com.model.Student;
+import com.util.ArrUtil;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		
+		ArrUtil util = new ArrUtil();
+		Student stu1 = new Student("홍길동", 10, "서울");
+		Student stu2 = new Student("강감찬", 20, "수지");
+		Student stu3 = new Student("유관순", 10, "경기");
+	
+		//배열에 학생객체를 저장 후 출력
+		
+		Student[] stuarr = new Student[3];
+		stuarr[0] = stu1; //홍길동
+		stuarr[1] = stu2; //강감찬
+		stuarr[2] = stu3; //유관순
+		util.ArrPrint(stuarr); //학생 배열을 ArrUtil로 넘김
+		//배열에서 학생이름만 "홍길동 / 강감찬 / 유관순"; = > 메인에서 출력
+		tuil.getNames();
+		
+
+		
+	}
+
+}

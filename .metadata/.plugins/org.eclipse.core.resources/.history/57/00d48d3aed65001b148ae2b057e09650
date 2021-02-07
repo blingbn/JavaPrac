@@ -1,0 +1,26 @@
+package com.util;
+
+import com.model.Student;
+
+public class ArrUtil {
+	//배열을 도와주는 util 클래스
+	
+	public void ArrPrint(Student[] arr) {//배열을 받아와서 전체 내용을 출력
+		
+		for(Student s : arr) {
+			System.out.println(s.getName());
+		}
+		
+		
+	};
+	
+	//학생의 이름을 "홍길동/유관순/강감찬"으로 반환함수
+	//함수이름 getNames(){}
+	
+	public String getNames(Student[] arr){
+		
+		return"";
+	}
+	
+	
+}

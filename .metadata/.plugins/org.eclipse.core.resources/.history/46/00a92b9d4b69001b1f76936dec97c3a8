@@ -1,0 +1,17 @@
+
+public class TestPet {
+
+	public static void main(String[] args) {
+		
+		
+		Pet[] pets = {
+					new Cat("나비", 2, "암컷", "흰색"),
+					new Cat("하늘", 5, "수컷", "회색"),
+					new Cat("멍멍", 3, "수컷", "리트리버"),
+					new Cat("야옹이", 20, "수컷", "블랙"),
+					new Cat("망치", 1, "수컷", "불독"),
+		}
+		
+	}
+
+}

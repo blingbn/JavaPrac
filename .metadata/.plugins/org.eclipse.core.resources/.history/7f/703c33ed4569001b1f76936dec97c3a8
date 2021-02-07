@@ -1,0 +1,30 @@
+
+public class Ex06 {
+	
+	class Employee{
+		public void taxRate(Employee e) {
+			if( e instanceof Manager) {
+				Manager m = (Manager)e;
+			}
+		}
+		
+	}
+	
+	class Manager extends Employee{}
+	class Engineer extends Employee{}
+
+	
+	public static void main(String[] args) {
+		
+		
+		Employee emp = new Employee();
+		Manager man = new Manager();
+		Engineer eng = new Engineer();
+		
+		emp.taxRate(emp);
+		man.taRate(man);
+		eng.taxRate(eng);
+		
+	}
+
+}

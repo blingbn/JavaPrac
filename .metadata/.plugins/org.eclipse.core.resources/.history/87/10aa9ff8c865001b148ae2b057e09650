@@ -1,0 +1,13 @@
+
+public class CalcTest {
+
+	public static void main(String[] args) {
+		Calculator cal = new Calculator();
+		
+		int data1 = Integer.parseInt(args[0]);
+		String arg = args[1];
+		char operator = arg.charAt(0); //charAt(indexN);
+		int data2 = Integer.parseInt(args[2]);
+	}
+
+}

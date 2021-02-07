@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+
+public class ListTest2 {
+
+	public static void main(String[] args) {
+		ArrayList<String> list = new ArrayList<>();
+		list.add("홍길동");
+		list.add("이순신");
+		list.add("유관순");
+		list.add("강감찬");
+		list.add("세종");
+		//list.add(new Date());
+		
+		System.out.println(list.size());
+		System.out.println(list.get(0)); // 인덱스를 지정해서 직접꺼내기 가능
+		System.out.println(list.get(1));
+		System.out.println(list.get(2));
+		
+		
+		for(String s : list) {
+			System.out.println(s);
+		}
+		
+		System.out.println("======================");
+		
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+		
+		Iterator<String> ite = list.iterator();
+		while (ite.hasNext()) {
+			String string = (String) ite.next();
+			
+		}
+	
+	}
+
+}

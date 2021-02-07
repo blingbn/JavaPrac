@@ -1,0 +1,11 @@
+import java.util.ArrayList;
+
+public class ListTest01 {
+
+	public static void main(String[] args) {
+		int size = 10;
+		MakeList makeList = new MakeList();
+
+	}
+
+}

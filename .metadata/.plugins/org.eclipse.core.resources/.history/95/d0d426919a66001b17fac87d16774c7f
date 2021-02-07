@@ -1,0 +1,12 @@
+package com.dao;
+
+public class OracleMain {
+
+	public static void main(String[] args) {
+		OracleService = new OracleService();
+		
+		HashSet<String> xxx = sercive.select();
+
+	}
+
+}

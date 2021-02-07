@@ -1,0 +1,34 @@
+import com.model.Student;
+import com.util.ArrUtil;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		
+		ArrUtil util = new ArrUtil();
+		
+		Student[] stuarr = util.createArr(); //배열을 받아옴
+		//나이가 제일 많은 학생을 검색해서 반환하는 함수
+		//maxAge(배열) -> 나이를 검색, 숫자가 높은 나이 반환
+		int max = util.maxAge(stuarr);
+		System.out.println(max);
+		
+		//학생한명의 데이터를 전체 출력 print() 함수 호출
+		Student stu1 = stuarr[0]; //홍길동 객체 
+		
+		util.stuAPrint(stu1);
+		
+		
+		
+		
+		
+		//배열에서 학생이름만 "홍길동 / 강감찬 / 유관순"; = > 메인에서 출력
+		//String names = util.getNames(stuarr);
+		//System.out.println("main에서 데이터 출력시 : " + names);
+		
+		
+
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetTest {
+
+	public static void main(String[] args) {
+
+		String data =args[0];
+		char[] a = data.toCharArray();
+		
+		for(char x : a) {
+			System.out.print(x);
+		} 
+		Set set = new HashSet();
+		set.add(a); 
+		
+		
+
+	}
+
+}

@@ -1,0 +1,23 @@
+import com.model.Student;
+import com.util.ArrUtil;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		
+		ArrUtil util = new ArrUtil();
+		
+	
+		
+		Student[] stuarr = util.createArr(); //학생 배열을 ArrUtil로 넘김
+		
+		//배열에서 학생이름만 "홍길동 / 강감찬 / 유관순"; = > 메인에서 출력
+		String names = util.getNames(stuarr);
+		System.out.println("main에서 데이터 출력시 : " + names);
+		
+		
+
+		
+	}
+
+}

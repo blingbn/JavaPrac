@@ -1,0 +1,32 @@
+
+public class AccountingApp {
+
+	public static void main(String[] args) {
+		
+
+		double valueOfSupply = Double.parseDouble(args[0]);
+		double vatRate = 0.1;
+		double expenseRate = 0.3;
+		double vat = valueOfSupply*vatRate;
+		double total = valueOfSupply+vat;
+		double expense = valueOfSupply*expenseRate;
+		double income = valueOfSupply-expense;
+		double divided1 = income *0.5;
+		double divided2 = income *0.3;
+		double divided3 = income *0.2;
+		
+		
+		System.out.println("Value of supply : " +valueOfSupply);
+		System.out.println("Vat : " +valueOfSupply*vatRate);
+		System.out.println("total : "+(valueOfSupply +valueOfSupply*vat));
+		System.out.println("Expense : "+(valueOfSupply*expenseRate));
+		System.out.println("Income : "+(valueOfSupply-valueOfSupply*expenseRate));
+		System.out.println("Divided : "+(valueOfSupply-valueOfSupply*0.3)*0.5);
+		System.out.println("Divided : "+(valueOfSupply-valueOfSupply*0.3)*0.3);
+		System.out.println("Divided : "+(valueOfSupply-valueOfSupply*0.3)*0.2);
+		
+		
+
+	}
+
+}

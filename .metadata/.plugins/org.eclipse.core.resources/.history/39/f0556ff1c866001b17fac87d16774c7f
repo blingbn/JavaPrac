@@ -1,0 +1,24 @@
+import java.util.HashMap;
+
+public class MapTest5 {
+
+	public static void main(String[] args) {
+		
+		HashMap<String, Person> map = new HashMap<>(); //다형성
+		map.put("one", new Person("홍길동", 20, "서울"));
+		map.put("two", new Person("이순신", 30, "전라"));
+		map.put("three", new Person("유관순", 40, "서울"));
+		
+		//get(key)
+		Person one = map.get("one"); //generic이 없을 경우 형변환 해야함. Person one = (Person)map.get("one");
+		System.out.println(one.getName());
+		System.out.println(map.get("one").getName());
+		System.out.println(one.getName()); // toString()
+		
+		
+		
+		
+
+	}
+
+}

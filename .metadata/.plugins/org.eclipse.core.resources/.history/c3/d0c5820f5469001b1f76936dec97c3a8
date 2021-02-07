@@ -1,0 +1,21 @@
+import java.util.Date;
+
+class Person{
+	String name;
+	int age;
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	
+	
+}
+
+public class Ex06_10 {
+	
+	Date d = new Date();
+	System.out.println(d.toString);
+	
+	
+}

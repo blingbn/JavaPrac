@@ -1,0 +1,12 @@
+
+public class Ex04_3 {
+	public static void main(String[] args) {
+		int score = 88;
+		char grade;
+		
+		System.out.println(grade);
+		
+		
+		
+	}
+}

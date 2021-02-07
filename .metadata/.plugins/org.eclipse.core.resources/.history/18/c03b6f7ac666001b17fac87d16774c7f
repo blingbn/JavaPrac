@@ -1,0 +1,71 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+public class MapTest4 {
+
+	public static void main(String[] args) {
+		HashMap<String, String> map = new HashMap<>(); //다형성
+		map.put("one", "홍길동");
+		map.put("two", "이순신");
+		map.put("three", "유관순");
+		//map.put("aa", 100);String generic으로 integer불가능
+		
+
+		
+		
+		System.out.println(map.get("one"));
+		System.out.println(map.get("two"));
+		System.out.println(map.get("three"));
+		
+		//메서드
+		System.out.println("크기"+ map.size());
+		System.out.println("키 포함여부"+ map.containsKey("one")); //boolean으로 반환
+		System.out.println("크기"+ map.containsValue("유관순")); //boolean으로 반환
+
+//		map.replace("three","강감찬");
+//		map.remove("two");
+//		map.clear();
+//		System.out.println("==========변경 후 : " + map.get("three"));
+		
+		
+		
+		
+		//1. keyset값만 얻기
+		Set<String> keys = map.keySet();
+		System.out.println(keys);
+		for(String key:keys) {
+			System.out.println(key+ " " + map.get(key));
+		}
+		System.out.println("==========================");
+		
+		
+		
+		//2. keyset => iterator 이용
+		
+		
+		Iterator<String> ite = keys.iterator();
+		while (ite.hasNext()) {
+			String key = ite.next();
+			System.out.println("key"+key + " " + map.get(key));
+			
+		}
+		System.out.println("==========================");
+		
+		
+		
+		
+		//3. keySet을 새롭게 받기 keys3이용 iterator로 찍기
+		Set<String> keys3 = map.keySet();
+		Iterator<String> ites = keys3.iterator();
+		while (ites.hasNext()) {
+			String string = (String) ites.next();
+			System.out.println("keys3"+string + " " + map.get(string) );
+		}
+		System.out.println("==========================");
+		
+		
+		
+	}
+
+}

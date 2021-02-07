@@ -1,0 +1,18 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetTest {
+
+	public static void main(String[] args) {
+
+		char[] data =args[0].toCharArray();
+		Set set = new HashSet();
+		set.add(args[0]); 
+		
+		for(char x : data) {
+			System.out.println(x);
+		} 
+
+	}
+
+}

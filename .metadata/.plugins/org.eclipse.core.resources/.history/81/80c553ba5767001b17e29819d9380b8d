@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+public class MapTest7 {
+
+	public static void main(String[] args) {
+		HashMap<String,Person> map = new HashMap<>();
+		map.put("one",new Person("홍길동", 20, "서울"));
+		map.put("two",new Person("홍길동2", 30, "서울2"));
+		map.put("three",new Person("홍길동3", 40, "서울3"));
+		
+		HashMap<String,Person> map2 = new HashMap<>();
+		map2.put("one",new Person("이순신", 20, "전라"));
+		map2.put("two", new Person("이순신2", 30, "전라2"));
+		map2.put("three", new Person("이순신3", 40, "전라3"));
+		
+		ArrayList<HashMap<String,Person>> list = new ArrayList<HashMap<String,Person>>();
+		list.add(map);
+		list.add(map2);
+		
+		
+		//홍길동 1번 출력
+//		HashMap<String, Person> mp1 = list.get(0);
+//		Person p = mp1.get("one");
+//		System.out.println(p.getName());
+
+		for(HashMap<String, Person> x : list) {// map하나 꺼내기
+			//map이용 순회 
+			Set<String>keys = x.keySet();
+			for(String key : keys) {//키 하나 꺼내기
+				Person p = x.get(key);//Person 하나 꺼내기
+				System.out.println(p.getName());
+			}
+		}
+		
+		 Iterator<HashMap<String,Person>> ites = list.iterator();
+		 while (ites.hasNext()) {
+			HashMap<String, Person> st = ites.next();
+			Set<String> keys = st.keySet();
+			Iterator<String> key = keys.iterator();
+		}
+		 
+		 /*
+			Set<String> keys2 =map.keySet();
+			Iterator<String> it = keys2.iterator();
+			while (it.hasNext()) {
+				String key = (String) it.next(); // 키를 하나 꺼내온것
+				Person p1 = map.get(key);
+				System.out.println(key + p1.getName());
+			}
+			*/
+	}
+
+}
