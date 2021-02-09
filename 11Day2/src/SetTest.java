@@ -6,46 +6,26 @@ public class SetTest {
 
 	public static void main(String[] args) {
 		
-		
-		
-		
 		Set set = new HashSet();
-		HashSet set2 = new HashSet(); //이 방법 추천
-		set.add("1"); // 추가 시 자동으로 방이 증가됨 String
+		set.add("1");
 		set.add("2");
-		set.add(3); //오토박싱 -> Integer
+		set.add(3);
 		set.add("4");
-		set.add(3.15); // 오토박싱 -> Double
+		set.add(3.15);
 		set.add(new Date());
-		set.add(new Date());
 		
+		//  값 출력
 		
-		//값 출력
-		
-		System.out.println("길이 : " + set.size()); //중복 불가이므로 -1
-		System.out.println("포함여부 : " + set.contains(20));
-		System.out.println("empty여부 : " + set.isEmpty());
-		
-		
-		
-		//set.remove
-		//System.out.println(set.remove("홍길동")); //홍길동이 없는 상태이므로 false, 지울수없다.
-		
-		
-		
-		
-		//배열
-		Object[] xxx = set.toArray(); //배열화
-		for(Object o : xxx) {
-			System.out.println(">>>"+o);
-			
+		System.out.println("길이:" + set.size());
+		System.out.println("포함여부:" + set.contains(20));
+		System.out.println("empty냐:" + set.isEmpty());
+		//set.remove("홍길동");
+		Object [] xxx = set.toArray();
+		for (Object o : xxx) {
+			System.out.println(o);
 		}
-	
-		set.clear();// 전부 제거
+		set.clear();
 		System.out.println(set);
-		
-		
-		
 	}
 
 }

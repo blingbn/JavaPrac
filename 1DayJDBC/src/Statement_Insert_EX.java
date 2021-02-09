@@ -1,0 +1,65 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class Statement_Insert_EX {
+
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String userid = "scott";
+		String passwd = "tiger";
+		
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;;
+		
+		try {
+			Class.forName(driver);
+			
+			con = DriverManager.getConnection(url, userid, passwd);
+			
+			String sql = "select deptno, dname, loc from dept";
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				System.out.println(rs.getInt(1) + "\t" + rs.getString(2) +
+						"\t" + rs.getString(3));
+			}
+			
+			int deptno = 99;
+			String dname = "제조";
+			String loc = "경기";
+			String sql1 = "INSERT INTO DEPT VALUES("+deptno+", '"+dname+"','"+loc+"')";
+			int result = stmt.executeUpdate(sql1);
+			System.out.println("실행된 레코드 수 : "+ result);
+			String sql2 = "select deptno, dname, loc from dept where deptno ="+deptno; //99번만 select한 경우
+			rs = stmt.executeQuery(sql2);
+			while(rs.next()) {
+				//System.out.println(deptno+ " " + dname + " "+ loc);
+				System.out.println(rs.getInt(1) + "\t" + rs.getString(2) +
+						"\t" + rs.getString(3));
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs!=null) {
+					rs.close();
+				} 
+				if(stmt!=null) {
+					stmt.close();
+				} 
+				if(con!=null) {
+					con.close();
+				} 
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
