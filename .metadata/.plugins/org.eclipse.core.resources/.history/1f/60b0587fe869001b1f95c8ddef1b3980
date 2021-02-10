@@ -1,0 +1,17 @@
+package com.bank;
+
+public class BankTest {
+
+	public static void main(String[] args) {
+		
+		Bank bank1 = Bank.getBank();
+		Bank bank2 = Bank.getBank();
+		
+		if(bank1 == bank2) {
+			System.out.println("같은 singleton 객체입니다.");
+		}else {
+			System.out.println("다른 객체입니다.");
+		}
+	}
+
+}

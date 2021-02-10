@@ -1,0 +1,19 @@
+
+public class Statement_WhereTest {
+
+	public static void main(String[] args) {
+
+
+		String driver = "oracle.jdbc.driver.OracleDriver"; // jdbc 드라이버 클래스 경로
+		String url = "jdbc:oracle:thin:@localhost:1521:XE"; // db url / sid
+		String userid = "scott";// 접속 계정 (스키마)
+		String passwd = "tiger"; // 접속 비밀번호
+		
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = nu;;
+		
+		
+	}
+
+}

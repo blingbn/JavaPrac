@@ -1,0 +1,54 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.dto.Dept;
+
+public class OracleDAO { //db접속을 위해 드라이버로딩, 커넥션 등
+
+	public ArrayList<Dept> select() {
+		
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String userid = "scott";
+		String passwd = "tiger";
+		
+		public OracleDAO () {
+			super();
+			try {
+				Class.forName(driver);
+				
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public ArrayList<Dept> select() throws SQLException{
+			ArrayList<Dept> list = new ArrayList<Dept>();
+			Connection con = null;
+			PreparedStatement = null;
+			ResultSet rs= null;
+			con = DriverManager.getConnection(url, userid, passwd);
+			String sql = "select deptno x, dname, loc from dept";
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				int deptno = rs.getInt("x");
+				String dname = rs.getString(2);
+				String loc = rs.getString("loc");
+				Dept dto = new Dept(deptno, dname, loc);
+				list.add(dto);
+			}
+			if(rs!=null) rs.close();
+			if(pstmt!=null) pstmt.close();
+			if(con!=null) con.close();
+			return list;
+		}
+	
+	}
+}

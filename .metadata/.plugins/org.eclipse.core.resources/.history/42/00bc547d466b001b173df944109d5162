@@ -1,0 +1,18 @@
+package com.service;
+
+import com.dao.OracleDAO;
+
+public class OracleService {
+	OracleDAO dao;
+	
+	public OracleService() {
+		dao = new OracleDAO();
+	}
+	
+	public ArrayList<Dept> select() throws SQLException{
+		ArrayList<Dept> list = dao.select();
+		return list;
+	}
+	
+	
+}

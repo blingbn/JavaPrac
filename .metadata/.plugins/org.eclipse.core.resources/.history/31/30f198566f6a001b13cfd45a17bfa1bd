@@ -1,0 +1,18 @@
+
+public class Statement_Insert_2 {
+
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String userid = "scott";
+		String passwd = "tiger";
+		
+		
+		//2. 드라이버 생성
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+
+	}
+
+}

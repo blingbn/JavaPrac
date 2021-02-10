@@ -1,0 +1,25 @@
+package com.test;
+
+public class JDBCTest {
+	
+	public static void main(String[] args) {
+		
+		//DAO클래스의 필요한 함수 호출 db연동
+		DeptDAO dao = new DeptDAO();
+		dao.selectAllDept();
+		
+		//DeptDTO dto = new DeptDTO(99,"개발","서울");
+		//dao.InsertDept(dto);
+		                                                                                                                                                                                                                                                                                            
+		//dao.InsertDept(new DeptDTO(99, "개발", "서울"));
+		
+		DeptDTO dto = dao.selectByDeptno(99);
+		System.out.println(dto);
+		
+		
+		
+		
+		
+	}
+	
+}

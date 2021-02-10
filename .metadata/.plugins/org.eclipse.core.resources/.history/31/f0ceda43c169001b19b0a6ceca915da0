@@ -1,0 +1,53 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Statement_select2 {
+
+	public static void main(String[] args) {
+
+		//1. 4가지 정보
+
+		String driver = "oracle.jdbc.driver.OracleDriver"; // jdbc 드라이버 클래스 경로
+		String url = "jdbc:oracle:thin:@localhost:1521:XE"; // db url / sid
+		String userid = "scott";// 접속 계정 (스키마)
+		String passwd = "tiger"; // 접속 비밀번호
+		
+		
+		//2. 드라이버 로딩, 변수 선언 try문 밖에서
+		Connection con = null; // DB접속 객체 url, id, passwd필요
+		Statement stmt = null; // rs를 구해오는데 사용하는 Statement
+		ResultSet rs = null; // 실행된 SQL문의 SELECT결과를 ResultSet객체에 담아서 옴
+		
+		try { //throws하면 잘 안될 수 있음
+			Class.forName(driver);
+			//System.out.println("====로딩성공====");
+		
+			//3. Connection 생성
+			con = DriverManager.getConnection(url, userid, passwd);
+			String sql = "select deptno, dname, loc from dept";
+			stmt = con.createStatement();
+			
+			System.out.println("==Con생성=="+con);
+			
+			rs = stmt.executeQuery(sql); 
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		
+		} finally {
+			try {
+				//System.out.println("====로딩성공====");
+				
+			} catch (Exception e2) {
+			}
+		}
+		
+		
+		
+	}//ends main
+}

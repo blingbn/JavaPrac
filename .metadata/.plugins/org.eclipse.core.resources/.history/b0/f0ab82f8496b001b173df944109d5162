@@ -1,0 +1,16 @@
+package com.dao;
+
+import java.util.ArrayList;
+
+import com.dto.Dept;
+
+public class OracleDAO { //db접속을 위해 드라이버로딩, 커넥션 등
+
+	public ArrayList<Dept> select() {
+		
+		return null;
+	}
+	
+	
+	
+}

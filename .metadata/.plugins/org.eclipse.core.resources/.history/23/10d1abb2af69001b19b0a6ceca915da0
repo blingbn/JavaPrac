@@ -1,0 +1,14 @@
+
+public class Statement_select {
+
+	public static void main(String[] args) {
+		
+		//1. 4가지 정보 지정 // 대소문자, 철자 주의
+		String driver="oracle.jdbc.driver.OracleDriver";
+		String url="jdbc:oracle:thin@localhost:1521:xe";
+		String userid="scott";
+		String passwd="tiger";
+		
+	}
+
+}
