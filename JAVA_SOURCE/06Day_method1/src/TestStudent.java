@@ -1,0 +1,19 @@
+
+public class TestStudent {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student stu1= new Student("홍길동", 20, "서울");//기본생성자 호출 객체 생성
+		String name= stu1.getName();
+		int age= stu1.getAge();
+		String address= stu1.getAddress();
+		System.out.println(name);//호출시 넘겨주는 매개변수 없음 
+		System.out.println(age);//호출시 넘겨주는 매개변수 없음 
+		System.out.println(address);//호출시 넘겨주는 매개변수 없음 
+		System.out.println(stu1.getData());
+//		System.out.println(stu1.getName());//호출시 넘겨주는 매개변수 없음 
+//		stu1.name="홍길동";
+//		System.out.println(stu1.name+"\t"+stu1.age+"\t"+stu1.address);
+	}
+
+}
