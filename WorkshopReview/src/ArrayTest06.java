@@ -19,15 +19,6 @@ public class ArrayTest06 {
 			
 		}
 		
-		
-
-		
-	
-
-		for (int i = 0; i < num; i++) {
-			System.out.print("사람 " + (i+1)+": ");
-			height[i] = scan.nextInt();
-		}
 		int max = height[0];
 		for (int i = 1; i < height.length; i++)
 			if (height[i] > max) {
