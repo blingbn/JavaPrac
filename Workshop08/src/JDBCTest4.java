@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class JDBCTest3 {
+public class JDBCTest4 {
 
 	public static void main(String[] args) {
 		String driver = "oracle.jdbc.driver.OracleDriver";
@@ -18,13 +18,11 @@ public class JDBCTest3 {
 		try {
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, userid, passwd);
-			
-			String sql = "INSERT INTO DISCARDED_PRODUCT (SELECT PDNO, PDNAME,PDSUBNAME,FACTNO, PDDATE,PDCOST,PDPRICE,PDAMOUNT,"
-					+ "SYSDATE FROM PRODUCT WHERE FACTNO = (SELECT FACTNO FROM FACTORY WHERE FACLOC ='CHANGWON'))";
+			String sql = "DELETE FROM DISCARDED_PRODUCT WHERE PDFACTORY = (SELECT FACTNO FROM FACTORY WHERE FACLOC ='CHANGWON')";
 			
 			pstmt = con.prepareStatement(sql);
 			int count = pstmt.executeUpdate();
-			System.out.println(count+"개의 데이터가 정상적으로 INSERT 되었습니다.");
+			System.out.println(count+"개의 데이터가 정상적으로 DELETE 되었습니다.");
 con.commit();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

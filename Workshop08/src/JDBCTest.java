@@ -4,9 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class JDBCTest2 {
+public class JDBCTest {
 
 	public static void main(String[] args) {
+		
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String userid = "tester";
@@ -21,18 +22,20 @@ public class JDBCTest2 {
 			Class.forName(driver);
 			con=DriverManager.getConnection(url, userid, passwd);
 			
-			String sql = "SELECT PDSUBNAME, PDCOST, PDPRICE FROM PRODUCT "
-					+ "WHERE PDCOST > ALL (SELECT MIN(PDCOST) FROM PRODUCT WHERE PDNAME = 'TV') "
-					+ "AND PDCOST < ALL (SELECT MAX(PDCOST) FROM PRODUCT WHERE PDNAME = 'CELLPHONE')";
+			String sql = "SELECT PDNAME 제품카테고리, PDSUBNAME 제품명, FACNAME 공장명, STONAME 판매점명, STAMOUNT 판매점재고수량 "
+					+ "FROM PRODUCT JOIN FACTORY USING (FACTNO) JOIN STORE USING(PDNO)"
+					+ "WHERE FACLOC='SEOUL' AND STAMOUNT=0 OR STAMOUNT IS NULL ORDER BY 1";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			System.out.println("제품명"+"\t\t"+"제품원가"+"\t"+"제품가격");
+			System.out.println("제품카테고리"+"\t"+"제품명"+"\t"+"공장명"+"\t"+"판매점명"+"\t"+"판매점재고수량");
 				while (rs.next()) {
-					String pdName=rs.getString(1);
-					String pdSubName=rs.getString(2);
-					int pdPrice=rs.getInt(3);
-					
-					System.out.println(pdName+"\t"+pdSubName+"\t"+pdPrice);
+					String pdName=rs.getString("제품카테고리");
+					String pdSubName=rs.getString("제품명");
+					String facName=rs.getString("공장명");
+					String stoName=rs.getString("판매점명");
+					int stAmount=rs.getInt("판매점재고수량");
+					System.out.println(pdName+"\t"+pdSubName+"\t"+facName+"\t"+stoName+"\t"+stAmount);
+					//System.out.println(rs.getString(1)+"\t\t"+rs.getString(2)+"\t"+rs.getString(3)+"\t"+rs.getString(4)+"\t"+rs.getString(5));
 				}
 			}
 			catch (ClassNotFoundException e) {
@@ -54,3 +57,5 @@ public class JDBCTest2 {
 		}
 	}
 }
+		
+	
