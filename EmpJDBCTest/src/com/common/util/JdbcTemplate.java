@@ -1,91 +1,149 @@
+/*------------------------------------------------------------------------------
+ * Name : JdbcTemplate
+ * DESC : DB Connection�� ������ ��ȯ�ϴ� ���� �⺻���� ��ɵ��� ��Ƶ� util Ŭ����
+ * VER  : 1.0
+ * PROJ : VCC Phase I
+ * Copyright 2011 LG CNS All rights reserved
+ *------------------------------------------------------------------------------
+ *                   ��        ��        ��        ��
+ *------------------------------------------------------------------------------
+ *     DATE      AUTHOR                       DESCRIPTION
+ *-------------  --------  ----------------------------------------------------- 
+ * 2011. 01. 01.  �濵���������   Ver1.0 �ۼ�
+ *----------------------------------------------------------------------------*/
+
 package com.common.util;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 
 public class JdbcTemplate {
-	public static String driver = "oracle.jdbc.driver.OracleDriver";
+
+	public static String driver="oracle.jdbc.driver.OracleDriver";
 	public static String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	public static String user = "scott";
-	public static String pass = "tiger";
+	public static String userid = "scott";
+	public static String passwd = "tiger";
 	
 	public JdbcTemplate() {
 		try {
 			Class.forName(driver);
-		} catch (Exception e) {
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	//Connection을 연결 한 후 멤버 속성인 conn에 Connection 객체를 세팅한 후 리턴
-	
-	public static Connection getConnection() {
-		//static 함수는 클래스가 로딩될 때 읽어지므로 Class이름.getConnection()사용
-		//함수안에서 일반 멤버변수사용이 안됨 (new 사용 객체 생성 후 사용)
-		//사용하려면 멤버변수에 static 선언
-		
-		Connection conn = null;
-		try {
-			conn=DriverManager.getConnection(url, user, pass);
-			conn.setAutoCommit(false);// 주의  commit, rollback
-		}catch(Exception e){
-			System.out.println("[JdbcTemplate.getConnection()] : "+e.getMessage());
-			e.printStackTrace();
-		}
-		return conn;
-	}
-	
-	public static boolean isConnected(Connection conn) {
-		boolean validConnection = true;
-		try {
-			if(conn==null || conn.isClosed())
-				validConnection = false;
-		}catch(SQLException e) {
-			validConnection = false;
-			e.printStackTrace();
-		}
-		return validConnection; //true연결, false 연결 x
-	}//ends isConnected
-	
-	
-	//Connection 객체를 시스템에 반환한다.
-		public static void close(Connection conn) { //Connection close 함수 
-			//JdbcTemplate.close(conn); --호출하는 곳에서 try-catch로 잡을 필요가 없음.밑에 이미 조건을 만들어 놨으니 
-			if(isConnected(conn)) { //true인 경우 : connection연결 되어 있는 경우 -- 위에 있는 isConnected를 호출한것임. 여기 this.isConnected를 할경우 둘다 static함수이므로 불
-				try {
-					conn.close();
-				}catch(SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		
-		
-		//Statement close 한다. 오버로딩 사용 
-		public static void close(Statement stmt) { 
-			try {
-				if(stmt !=null)
-					stmt.close();
-			}catch(SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		//여기까지 만듦.
-		
-		
-		//rs close 한다. 오버로딩 사용 
-		public static void close(ResultSet rs) { 
-			try {
-				if(rs !=null)
-					rs.close();
-			}catch(SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		
-	}//ends JdbcTemplate
-	
+    /**
+     * Connection을 연결한 후 멤버 attribute 인 conn 에 Connection 객체를 세팅한 후 리턴한다.
+     * 
+     * @return Connection
+     */
+    public static Connection getConnection() {
+        Connection conn = null;
+        try {
+            
+            conn = DriverManager.getConnection(url,userid,passwd);
+            conn.setAutoCommit(false);
+        } catch (Exception e) {
+            System.out.println("[JdbcTemplate.getConnection] : " + e.getMessage());
+            e.printStackTrace();
+        }
+        return conn;
+    }
 
+    /**
+     * DB와 Connect되었는지 여부를 Return 한다.
+     * 
+     * @return DB와 Connect 되었는지 여부.
+     */
+    public static boolean isConnected(Connection conn) {
+
+        boolean validConnection = true;
+
+        try {
+            if (conn == null || conn.isClosed())
+                validConnection = false;
+        } catch (SQLException e) {
+            validConnection = false;
+            e.printStackTrace();
+        }
+        return validConnection;
+    }
+
+    /**
+     * Connection 객체를 시스템에 반환한다.
+     */
+    public static void close(Connection conn) {
+
+        if (isConnected(conn)) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Statement를 Close 한다.
+     * 
+     * @param stmt
+     *            Statement 객체.
+     */
+    public static void close(Statement stmt) {
+
+        try {
+            if (stmt != null) {
+                stmt.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * ResultSet을 Close 한다.
+     * 
+     * @param result
+     *            ResultSet 객체.
+     */
+    public static void close(ResultSet rset) {
+
+        try {
+            if (rset != null)
+                rset.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 지금까지의 트랜잭션을 Commit 처리한다.
+     */
+    public static void commit(Connection conn) {
+
+        try {
+            if (isConnected(conn)) {
+                conn.commit();
+                System.out.println("[JdbcTemplate.commit] : DB Successfully Committed!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 지금까지의 트랜잭션을 Rollback 처한다.
+     */
+    public static void rollback(Connection conn) {
+
+        try {
+            if (isConnected(conn)) {
+                conn.rollback();
+                System.out.println("[JdbcTemplate.rollback] : DB Successfully Rollbacked!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
