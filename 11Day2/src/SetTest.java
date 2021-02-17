@@ -13,9 +13,7 @@ public class SetTest {
 		set.add("4");
 		set.add(3.15);
 		set.add(new Date());
-		
 		//  값 출력
-		
 		System.out.println("길이:" + set.size());
 		System.out.println("포함여부:" + set.contains(20));
 		System.out.println("empty냐:" + set.isEmpty());
@@ -27,5 +25,4 @@ public class SetTest {
 		set.clear();
 		System.out.println(set);
 	}
-
 }
