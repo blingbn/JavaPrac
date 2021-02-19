@@ -1,0 +1,73 @@
+package com.service;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.config.MySqlSessionFactory;
+import com.dao.OracleMyBatisDAO;
+import com.dto.Dept;
+
+public class OracleMyBatisService {
+	
+	OracleMyBatisDAO dao;
+	
+	public OracleMyBatisService() {
+		super();
+		dao = new OracleMyBatisDAO();
+	}
+	public List<Dept> selectAll(){
+		SqlSession session = MySqlSessionFactory.getSqlSession();
+		List<Dept> list = null;
+		try {
+			list = dao.selectAll(session);
+		}finally {
+			session.close();
+		}return list;
+	}
+	
+	//insert
+		public void insert(Dept dept) {
+			SqlSession session = MySqlSessionFactory.getSqlSession();
+		
+			try {
+				dao.insert(session, dept);
+				session.commit(); //명시적으로 꼭 commit해주어야함.
+			} finally {
+				session.close();
+			}
+		}
+		public Dept selectByDeptno(int deptno) {
+			SqlSession session = MySqlSessionFactory.getSqlSession();
+			Dept dept = null;
+			try {
+				dept = dao.selectByDeptno(session, deptno);
+			}finally {
+				session.close();
+			}
+			
+			return dept;
+		}
+		public int update(Dept dept) {
+			SqlSession session = MySqlSessionFactory.getSqlSession();
+			int num=0;
+			try {
+				num = dao.update(session, dept);
+				session.commit();
+			}finally {
+				session.close();
+			}
+			return num;
+		}
+		public int delete(int i) {
+			SqlSession session = MySqlSessionFactory.getSqlSession();
+			int num=0;
+			try {
+				num = dao.delete(session, i);
+				session.commit();
+			}finally {
+				session.close();
+			}
+			return num;
+		}
+}

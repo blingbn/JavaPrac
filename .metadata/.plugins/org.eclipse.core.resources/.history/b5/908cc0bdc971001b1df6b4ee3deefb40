@@ -1,0 +1,29 @@
+package com.dao;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.dto.Dept;
+import com.exception.RecordNotFoundException;
+
+public class OracleMyBatisDAO {
+	
+	public OracleMyBatisDAO() {
+		super();
+	}
+
+	public List<Dept> selectByDeptno(SqlSession session, HashMap<String, Integer> map) {
+		List<Dept> list = session.selectOne("selectByDeptno", map);
+		return list;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+}

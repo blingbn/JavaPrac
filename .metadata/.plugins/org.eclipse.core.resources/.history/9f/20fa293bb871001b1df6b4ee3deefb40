@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+  <configuration>
+  <properties resource="jdbc.properties" />
+  <!-- typeAliases -->
+  <typeAliases>
+
+  <!-- 모델클래스가 추가될 경우 alias만 추가해서 쓰면 됨 -->
+  </typeAliases>
+  	<environments default="development">
+  		<environment id="development">
+  			<transactionManager type="JDBC" />
+  			<dataSource type="POOLED">
+  				<property name="driver" value="${oracle.jdbc}" /> <!-- xml : ${}  mapper:# -->
+				<property name="url" value="${oracle.url}" />
+				<property name="username" value="${oracle.userid}" />
+				<property name="password" value="${oracle.passwd}" />
+				
+				<!-- jdbc.properties를 안쓰는경우
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="scott" />
+				<property name="password" value="tiger" />
+				 -->
+				 
+  			</dataSource>
+  		</environment>
+  	</environments>
+  	<mappers> <!-- 2개의 mapper -->
+		<mapper resource="DeptMapper.xml" />
+		<mapper resource="DeptMapper2.xml" /> <!--  Mapper 추가등록  -->
+	</mappers>
+  </configuration>

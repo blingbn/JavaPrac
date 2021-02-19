@@ -1,0 +1,11 @@
+#key=value
+oracle.jdbc=oracle.jdbc.driver.OracleDriver
+oracle.url=jdbc:oracle:thin:@localhost:1521:xe
+oracle.userid=scott
+oracle.passwd=tiger
+
+
+mysql.jdbc=oracle.jdbc.driver.OracleDriver
+mysql.url=jdbc:oracle:thin:@localhost:1521:xe
+mysql.userid=scott
+mysql.passwd=tiger

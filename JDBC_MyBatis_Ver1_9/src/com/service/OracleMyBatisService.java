@@ -24,6 +24,7 @@ public class OracleMyBatisService {
 		List<Dept> list = null;
 		try {
 			list = dao.multiSelect(session, deptnoes);
+			
 		}finally {
 			session.close();
 		}
@@ -31,7 +32,6 @@ public class OracleMyBatisService {
 	}
 
 
-	
 
 
 

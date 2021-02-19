@@ -1,0 +1,56 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class JDBCTest3 {
+
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String userid = "tester";
+		String passwd = "tester";
+		
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			Class.forName(driver);
+			con=DriverManager.getConnection(url, userid, passwd);
+			
+			String sql = "SELECT PDSUBNAME, PDCOST, PDPRICE FROM PRODUCT "
+					+ "WHERE PDCOST > ALL (SELECT MIN(PDCOST) FROM PRODUCT WHERE PDNAME = 'TV') "
+					+ "AND PDCOST < ALL (SELECT MAX(PDCOST) FROM PRODUCT WHERE PDNAME = 'CELLPHONE')";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			System.out.println("제품명"+"\t\t"+"제품원가"+"\t"+"제품가격");
+				while (rs.next()) {
+					String pdName=rs.getString(1);
+					String pdSubName=rs.getString(2);
+					int pdPrice=rs.getInt(3);
+					
+					System.out.println(pdName+"\t"+pdSubName+"\t"+pdPrice);
+				}
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(pstmt!=null) {
+						pstmt.close();
+					} 
+					if(con!=null) {
+						con.close();
+					} 
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+			}
+		}
+	}
+}

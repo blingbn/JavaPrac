@@ -1,0 +1,11 @@
+package factory;
+
+import java.util.ArrayList;
+
+public class FactoryDAO {
+	
+	public ArrayList<FactoryDTO> getFactoryAll(Connection con){
+		
+	}
+	
+}

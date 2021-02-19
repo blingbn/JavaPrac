@@ -1,0 +1,26 @@
+package com.service;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.dao.OracleMyBatisDAO;
+import com.dto.Dept;
+
+public class OracleMyBatisService {
+	
+	OracleMyBatisDAO dao;
+	
+	public OracleMyBatisService() {
+		super();
+		dao = new OracleMyBatisDAO();
+	}
+	
+	//insert
+//		public void insert(Dept dept) {
+//			SqlSession session = MySqlSessionFactory.getSqlSession();
+//			try {
+//				dao.insert(session, dept)
+//			} finally {
+//				e.printTrackTrace();
+//			}
+//		}
+}

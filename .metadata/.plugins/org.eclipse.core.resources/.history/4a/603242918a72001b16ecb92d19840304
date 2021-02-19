@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dept.DeptMapper4"> <!-- com.dept.DeptMapper2.selectAll -->
+
+
+
+<delete id="multiDelete" parameterType="arraylist">
+	delete from dept where deptno in 
+	<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+		#{item.deptno}
+	</foreach>
+</delete>
+
+<insert id="multiInsert" parameterType="arraylist">
+	insert all 
+	<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+		into dept (deptno, dname, loc)
+		values(#{item.deptno}, #{item.dname}, #{item.loc})
+	</foreach>
+	select * from dual <!-- 주의! insert all은 항상 select쿼리가 뒤에 따라와야함 안할경우 오류-->
+</insert>
+</mapper>

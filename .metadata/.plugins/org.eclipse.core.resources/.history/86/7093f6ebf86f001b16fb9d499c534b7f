@@ -1,0 +1,16 @@
+import com.biz.EmpBiz;
+
+public class EmpTest {
+
+	public static void main(String[] args) {
+		
+		EmpBiz empBiz = new EmpBiz();
+		
+		ArrayList<EmpDTO> list = empBiz.selectAllEmp();
+		for(EmpDTO dto : list) {
+			System.out.println(dto);
+		}
+		
+	}
+
+}

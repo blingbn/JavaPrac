@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+
+import com.biz.EmpBiz;
+import com.entity.EmpDTO;
+
+public class EmpTest {
+
+	public static void main(String[] args) {
+		
+		EmpBiz empBiz = new EmpBiz();
+		
+		
+		ArrayList<EmpDTO> list = empBiz.selectAllEmp();
+		for(EmpDTO dto : list) {
+			System.out.println(dto);
+		}
+		
+		try {
+			EmpDTO eno = empBiz.selectDetailEmp("7934");
+			System.out.println(eno);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			EmpDTO update = empBiz.updateEmp();
+			System.out.println(update);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}
