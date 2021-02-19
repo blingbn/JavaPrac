@@ -13,6 +13,7 @@ public class OracleMyBatisDAO {
 	}
 
 	public Dept selectByDeptno(SqlSession session, HashMap<String, Integer> map) {
+		//System.out.println(map);
 		Dept dept = session.selectOne("selectByDeptno", map);
 		return dept;
 	}

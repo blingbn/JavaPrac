@@ -11,7 +11,8 @@ public class OracleMyBatisMain {
 		
 		OracleMyBatisService service = new OracleMyBatisService();
 		
-		HashMap<String, Integer> map = new HashMap<>();
+		//int deptno = 10; int 로 넘겨서도 가능
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		map.put("deptno", 10);
 		Dept dept = service.selectByDeptno(map);
 		System.out.println(dept);

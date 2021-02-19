@@ -17,10 +17,12 @@ public class MySqlSessionFactory {
 	
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
+			//configuration.xml 읽어오기 성공
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		//초기화 성공
 	}
 	public static SqlSession getSqlSession() {
 		SqlSession session = sqlSessionFactory.openSession();
