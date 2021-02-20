@@ -1,0 +1,12 @@
+import com.service.OracleMyBatisService;
+
+public class OracleMyBatisMain {
+
+	public static void main(String[] args) {
+
+		OracleMyBatisService service = new OracleMyBatisService();
+		
+		
+	}
+
+}

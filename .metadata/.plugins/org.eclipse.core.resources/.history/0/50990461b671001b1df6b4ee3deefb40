@@ -1,0 +1,19 @@
+import java.util.HashMap;
+
+import com.service.OracleMyBatisService;
+
+public class OracleMyBatisMain2 {
+
+	public static void main(String[] args)  {
+		
+		OracleMyBatisService service = new OracleMyBatisService();
+		
+		HashMap map = service.selectByDeptnoHashMap(10);
+		System.out.println(map);
+	
+	
+	
+	
+	}
+
+}

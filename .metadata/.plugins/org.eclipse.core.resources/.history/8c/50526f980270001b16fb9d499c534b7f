@@ -1,0 +1,35 @@
+package com.biz;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import com.common.util.JdbcTemplate;
+import com.dao.EmpDAO;
+import com.entity.EmpDTO;
+import com.exception.DataNotFoundException;
+
+public class EmpBiz {
+	EmpDAO dao;
+	
+	public EmpBiz() {
+		dao = new EmpDAO();
+	}
+	
+	public ArrayList<EmpDTO> selectAllEmp(){
+		Connection con = JdbcTemplate.getConnection();
+		ArrayList<EmpDTO> list = dao.selectAllEmp(con);
+		JdbcTemplate.close(con);
+		return list;
+	}
+
+	public EmpDTO selectDetailEmp(String eno) throws DataNotFoundException {
+		Connection con = JdbcTemplate.getConnection();
+		EmpDTO emp = dao.selectAllEmp(con,eno);
+		return EmpDTO;
+	}
+
+
+
+	
+	
+}

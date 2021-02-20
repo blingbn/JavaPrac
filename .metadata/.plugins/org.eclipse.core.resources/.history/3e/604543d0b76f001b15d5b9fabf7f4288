@@ -1,0 +1,42 @@
+package com.common.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class JdbcTemplate {
+	public static String driver = "oracle.jdbc.driver.OracleDriver";
+	public static String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	public static String user = "scott";
+	public static String pass = "tiger";
+	
+	public JdbcTemplate() {
+		try {
+			Class.forName(driver);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	//Connection을 연결 한 후 멤버 속성인 conn에 Connection 객체를 세팅한 후 리턴
+	
+	public static Connection getConnection() {
+		//static 함수는 클래스가 로딩될 때 읽어지므로 Class이름.getConnection()사용
+		//함수안에서 일반 멤버변수사용이 안됨 (new 사용 객체 생성 후 사용)
+		//사용하려면 멤버변수에 static 선언
+		
+		Connection conn = null;
+		try {
+			conn=DriverManager.getConnection(url, user, pass);
+			conn.setAutoCommit(false);// 주의  commit, rollback
+		}catch(Exception e){
+			System.out.println("[JdbcTemplate.getConnection()] : "+e.getMessage());
+			e.printStackTrace();
+		}
+		return conn;
+	}
+	
+	
+	
+	
+	
+	
+}

@@ -16,8 +16,6 @@ public class TreeSetTest {
 			System.out.print(":");
 		}
 		
-		
-		
 		TreeSet<String> s = new TreeSet<String>();
 		s.add("hello");
 		s.add("aello");
@@ -32,7 +30,5 @@ public class TreeSetTest {
 		System.out.println("지정된값 앞요소(exclusive):"+ s.headSet("hello"));
 		System.out.println("지정된값 뒤요소(inclusive):"+ s.tailSet("hello"));
 		System.out.println("범위요소:"+ s.subSet("bello","xello"));
-		
 	}
-
 }

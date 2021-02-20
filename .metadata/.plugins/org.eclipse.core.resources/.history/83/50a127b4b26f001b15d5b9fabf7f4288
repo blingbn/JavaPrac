@@ -1,0 +1,28 @@
+package factory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class FactoryDAO {
+	
+	public ArrayList<FactoryDTO> getFactoryAll(Connection con){
+		ArrayList<FactoryDTO> list = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		while(rs.next()) {
+			String factNo=rs.getString("factNo");
+			String facName=rs.getString("facName");
+			String factLoc=rs.getString("factLoc");
+			FactoryDTO dto = new FactoryDTO(factNo, factName, factLoc);
+			
+			
+			
+		}
+		return list;
+		
+	}
+	
+}

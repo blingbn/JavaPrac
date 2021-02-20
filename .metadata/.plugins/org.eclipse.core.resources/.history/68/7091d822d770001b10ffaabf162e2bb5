@@ -1,0 +1,13 @@
+package com.service;
+
+import com.dao.OracleMyBatisDAO;
+
+public class OracleMyBatisService {
+	
+	OracleMyBatisDAO dao;
+	
+	public OracleMyBatisService() {
+		super();
+		dao = new OracleMyBatisDAO();
+	}
+}
