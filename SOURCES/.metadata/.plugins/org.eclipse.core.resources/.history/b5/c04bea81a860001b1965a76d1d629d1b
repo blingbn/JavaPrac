@@ -1,0 +1,33 @@
+package com.test;
+
+
+class Man{
+	String name;
+	int age;
+	
+	
+	public Man(String name) {
+		this(name, 19);
+		System.out.println("person 생성자1");
+	}
+
+}
+
+
+
+
+
+
+
+
+public class Ex05_17 {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+
+	}
+
+}

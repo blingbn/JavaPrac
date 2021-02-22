@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dept.DeptMapper"> 
+
+
+<select id="selectAll" resultType="com.dto.Dept">
+	select * from dept where <![CDATA[ deptno > 90]]>
+	<!-- 2번  <![CDATA[select * from dept where deptno > 90]]>  -->
+	<!-- 3번  select * from dept where deptno &gt; 90 -->
+</select>
+
+<select id="selectAll2" resultType="com.dto.Dept">
+	select * from dept where deptno &gt; 90
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  
+<select id="topN" resultType="Dept">
+	select deptno, dname, loc
+	from dept
+	order by 1 desc
+</select>
+
+<select id="topNLoc" parameterType="String" resultType="Dept">
+	select deptno, dname, loc
+	from dept where loc=#{loc}
+</select>
+
+
+<select id="getDate" resultType="String">
+	select to_char(sysdate, 'yyyy/mm/dd')
+	from dual
+</select>
+
+
+
+
+
+
+
+
+
+
+<insert id="multiInsert" parameterType="arraylist">
+	insert all 
+	<foreach item="item" index="index" collection="list" >
+		into dept (deptno, dname, loc)
+		values(#{item.deptno}, #{item.dname}, #{item.loc})
+	</foreach>
+	select * from dual 주의! insert all은 항상 select쿼리가 뒤에 따라와야함 안할경우 오류
+</insert>
+
+<select id="selectAll" resultType="Dept">  Alias 사용 
+	select deptno, dname, loc from dept
+</select>
+-->
+</mapper>

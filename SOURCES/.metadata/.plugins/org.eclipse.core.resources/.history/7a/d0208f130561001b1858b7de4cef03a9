@@ -1,0 +1,8 @@
+
+public class Test_Single {
+
+	public static void main(String[] args) {
+		Bank b = Bank.getBank();
+	}
+
+}

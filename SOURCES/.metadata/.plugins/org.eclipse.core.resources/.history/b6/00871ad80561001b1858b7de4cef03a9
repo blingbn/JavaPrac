@@ -1,0 +1,15 @@
+import com.bank.Bank;
+
+public class Test_Single {
+
+	public static void main(String[] args) {
+		Bank bank = Bank.getBank(); //싱글톤 객체 얻기
+		System.out.println(bank);
+		
+		Bank bank1 = Bank.getBank();//싱글톤 객체 얻기
+		System.out.println(bank1);
+		
+		bank.setName(bank1.getName());
+	}
+
+}
