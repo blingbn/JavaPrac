@@ -1,0 +1,35 @@
+package com.test;
+
+public class TestStudent {
+
+	public static void main(String[] args) {
+
+
+		//1. 홍길동 / 20 / 서울, 이순신/30/제주 강감찬/40/경기 생성 배열에 저장
+		
+		Student [] arr = new Student[3];
+		arr[0] = new Student("홍길동",20,"서울");
+		arr[1] = new Student("이순신",30,"제주");
+		arr[2] = new Student("강감찬",40,"경기");
+		/*
+		for(Student s : arr) {
+			System.out.println(s);
+		}
+		for(int i=0; i<arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+		
+		for(Student s : arr) {
+			System.out.println(s);
+		}
+		*/
+		//배열
+		
+		for(Student s : arr) {
+			if(s.getName().equals("홍길동"))
+			System.out.println(s.getName()+"\t"+s.getAddress());
+		}
+
+	}
+
+}

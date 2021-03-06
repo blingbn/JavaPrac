@@ -1,0 +1,19 @@
+
+public class While {
+
+	public static void main(String[] args) {
+
+
+		
+		//출력
+		int a = 5;
+		String s = "I can do it.";
+		
+		while(a++!=0) {
+			System.out.println(a+ "-" + s);
+		}
+		
+
+	}
+
+}
