@@ -1,0 +1,15 @@
+
+public class HelloTest2 {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello");
+		System.out.print("Hello2");
+		System.out.println("Hello3");
+		
+		String = "휴대폰";
+		int = 15;
+		int = 26000;
+		int = 350000;
+	}
+}

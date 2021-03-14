@@ -1,0 +1,17 @@
+
+public class HelloTest2 {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello");
+		System.out.print("Hello2");
+		System.out.println("Hello3");
+		
+		String cell = "휴대폰";
+		int ea = 15;
+		int originPrice= 26000;
+		int sellPrice = 350000;
+		
+		System.out.printf("상품 : %s, 수량 : %n, 원가 : %n, 판매가격 : %n",cell,ea,originPrice,sellPrice);
+	}
+}
