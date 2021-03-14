@@ -1,0 +1,19 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetTest {
+
+	public static void main(String[] args) {
+		
+		String s = "JavaProgramming";
+		
+		//Set<String> set = new HashSet<>();
+		
+		String[] v = s.split("");
+		System.out.println(v.toString());
+		
+		
+		
+	}
+
+}
