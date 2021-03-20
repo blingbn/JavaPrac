@@ -1,0 +1,20 @@
+
+public class HelloTest2 {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello");
+		System.out.print("Hello2");
+		System.out.println("Hello3");
+		
+		String name= "홍길동";
+		int age = 20;
+		String tell ="010-1111-2222";
+		String address= "당산동";
+		
+		System.out.println("이름 : "+ name + ",나이 : "+age );
+
+		System.out.println("전화 : "+ tell + ",주소 : "+address );
+	}
+
+}

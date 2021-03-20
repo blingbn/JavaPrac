@@ -25,6 +25,7 @@ public class EmpTest {
 			EmpDTO e= empBiz.selectDetailEmp("40");
 			System.out.println(e);
 		} catch (DataNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
